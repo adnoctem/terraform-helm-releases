@@ -7,7 +7,7 @@ variable "create" {
 variable "releases" {
   description = "A map of Helm releases to be created."
   type        = any
-  default = {}
+  default     = {}
 }
 
 variable "depends" {

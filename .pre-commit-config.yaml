@@ -25,3 +25,37 @@ repos:
     hooks:
       - id: terraform-docs-go
         args: ["-c", ".github/linters/.terraform-docs.yml", "."]
+
+  # Terraform
+  - repo: https://github.com/antonbabenko/pre-commit-terraform
+    rev: v1.98.0
+    hooks:
+      # ref: https://github.com/antonbabenko/pre-commit-terraform?tab=readme-ov-file#terraform_providers_lock
+      - id: terraform_providers_lock
+        name: "Generate lock-files for Terraform providers"
+        files: .*\.tf$
+        args:
+          - --hook-config=--mode=only-check-is-current-lockfile-cross-platform
+      - id: terraform_fmt
+        name: "Format the Terraform configuration"
+        files: .*\.tf$
+        args:
+          - --args=-diff
+      # see reference option 4
+      # ref: https://github.com/antonbabenko/pre-commit-terraform?tab=readme-ov-file#terraform_validate
+      - id: terraform_validate
+        exclude: 'examples/(full)/[^/]+$'
+        name: "Validate the Terraform configuration"
+        files: .*\.tf$
+        args:
+          - --hook-config=--retry-once-with-cleanup=true
+
+  # Local hooks
+  - repo: local
+    hooks:
+      - id: prettier_fmt
+        name: "Format the Markdown files with Prettier"
+        language: system
+        files: .*\.md$
+        entry: |
+          bash -c 'prettier --write *.md'

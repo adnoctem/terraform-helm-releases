@@ -16,7 +16,7 @@ terraform {
 provider "kubernetes" {
   host                   = var.cluster_host
   cluster_ca_certificate = base64decode(var.cluster_certificate_authority_data)
-  token = var.cluster_token
+  token                  = var.cluster_token
 }
 
 provider "helm" {

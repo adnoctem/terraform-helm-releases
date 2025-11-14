@@ -1,8 +1,7 @@
 resource "helm_release" "current" {
   for_each = var.create ? var.releases : []
 
-  # name             = try(each.value.name, each.key)
-  name = lookup(each.value, "name", each.key)
+  name             = lookup(each.value, "name", each.key)
   description      = lookup(each.value, "description", null)
   namespace        = lookup(each.value, "namespace", null)
   create_namespace = lookup(each.value, "create_namespace", null)

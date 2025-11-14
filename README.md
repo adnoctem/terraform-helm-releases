@@ -21,11 +21,12 @@ module "my_module" {
 ```
 
 <!-- BEGIN_TF_DOCS -->
+
 ## Providers
 
-| Name | Version |
-|------|---------|
-| <a name="provider_helm"></a> [helm](#provider\_helm) | >= 2.9, < 3.0 |
+| Name                                                | Version |
+| --------------------------------------------------- | ------- |
+| <a name="provider_helm"></a> [helm](#provider_helm) | 2.17.0  |
 
 ## Modules
 
@@ -33,20 +34,21 @@ No modules.
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| <a name="input_cluster_certificate_authority_data"></a> [cluster\_certificate\_authority\_data](#input\_cluster\_certificate\_authority\_data) | The TLS CA data of the Kubernetes cluster to apply resources to. | `string` | n/a | yes |
-| <a name="input_cluster_host"></a> [cluster\_host](#input\_cluster\_host) | The hostname of your Kubernetes cluster's control plane endpoint to apply resources to. | `string` | n/a | yes |
-| <a name="input_cluster_token"></a> [cluster\_token](#input\_cluster\_token) | The Kubernetes control plane API authorization token. | `string` | n/a | yes |
-| <a name="input_create"></a> [create](#input\_create) | Whether or not to create Kubernetes resources. | `bool` | `true` | no |
-| <a name="input_depends"></a> [depends](#input\_depends) | Terraform modules, on which this module depends. Analogous to 'depends\_on'. Terraform will make sure those get created first. | `list(any)` | `[]` | no |
-| <a name="input_releases"></a> [releases](#input\_releases) | A map of Helm releases to be created. | `any` | `{}` | no |
+| Name                                                                                                                                    | Description                                                                                                                   | Type        | Default | Required |
+| --------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------- | ------- | :------: |
+| <a name="input_cluster_certificate_authority_data"></a> [cluster_certificate_authority_data](#input_cluster_certificate_authority_data) | The TLS CA data of the Kubernetes cluster to apply resources to.                                                              | `string`    | n/a     |   yes    |
+| <a name="input_cluster_host"></a> [cluster_host](#input_cluster_host)                                                                   | The hostname of your Kubernetes cluster's control plane endpoint to apply resources to.                                       | `string`    | n/a     |   yes    |
+| <a name="input_cluster_token"></a> [cluster_token](#input_cluster_token)                                                                | The Kubernetes control plane API authorization token.                                                                         | `string`    | n/a     |   yes    |
+| <a name="input_create"></a> [create](#input_create)                                                                                     | Whether or not to create Kubernetes resources.                                                                                | `bool`      | `true`  |    no    |
+| <a name="input_depends"></a> [depends](#input_depends)                                                                                  | Terraform modules, on which this module depends. Analogous to 'depends_on'. Terraform will make sure those get created first. | `list(any)` | `[]`    |    no    |
+| <a name="input_releases"></a> [releases](#input_releases)                                                                               | A map of Helm releases to be created.                                                                                         | `any`       | `{}`    |    no    |
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
-| <a name="output_releases"></a> [releases](#output\_releases) | A map of release names to their respective resource outputs. |
+| Name                                                        | Description                                                  |
+| ----------------------------------------------------------- | ------------------------------------------------------------ |
+| <a name="output_releases"></a> [releases](#output_releases) | A map of release names to their respective resource outputs. |
+
 <!-- END_TF_DOCS -->
 
 ### 🔃 Contributing

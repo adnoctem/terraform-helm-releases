@@ -26,7 +26,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
-        terraform_version: [1.7, 1.8, 1.9]
+        terraform_version: [1.11, 1.12, 1.13]
     env:
       GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }} # https://github.com/terraform-linters/tflint/blob/master/docs/user-guide/plugins.md#avoiding-rate-limiting
     runs-on: ${{ matrix.os }}
