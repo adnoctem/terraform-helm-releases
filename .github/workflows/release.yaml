@@ -23,7 +23,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     env:
-      GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      GH_TOKEN: ${{ secrets.ANC_GITHUB_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
