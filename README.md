@@ -1,27 +1,52 @@
 <p align="center">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/adnoctem/artwork/refs/heads/main/identity/icon/white/AdNoctem-Logo-White_256x256.png">
-      <img src="https://raw.githubusercontent.com/adnoctem/artwork/refs/heads/main/identity/icon/black/AdNoctem-Logo-Black_256x256.png" height="225">
+      <source media="(prefers-color-scheme: dark)" srcset="https://avatars.githubusercontent.com/u/15859888?s=200&v=4">
+      <img src="https://avatars.githubusercontent.com/u/15859888?s=200&v=4" height="225">
     </picture>
     <picture>
       <img src="https://raw.githubusercontent.com/adnoctem/artwork/refs/heads/main/projects/terraform/icon/color/terraform-icon-color.png" height="225">
     </picture>
-    <h1 align="center">PROVIDER - MODULE</h1>
+    <h1 align="center">Helm - Releases</h1>
 </p>
 
-A [Terraform module][module] to ...
+A [Terraform module][module] to manage Helm releases on a Kubernetes cluster.
 
 ## ✨ TL;DR
 
 ```shell
 module "my_module" {
-  source = "<org>/<provider>/<MODULE>"
+  source = "github.com/adnoctem/terraform-helm-releases?ref=v1.0.0"
   ...
 }
 ```
 
 <!-- BEGIN_TF_DOCS -->
+## Providers
 
+| Name | Version |
+|------|---------|
+| <a name="provider_helm"></a> [helm](#provider\_helm) | >= 2.9, < 3.0 |
+
+## Modules
+
+No modules.
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_cluster_certificate_authority_data"></a> [cluster\_certificate\_authority\_data](#input\_cluster\_certificate\_authority\_data) | The TLS CA data of the Kubernetes cluster to apply resources to. | `string` | n/a | yes |
+| <a name="input_cluster_host"></a> [cluster\_host](#input\_cluster\_host) | The hostname of your Kubernetes cluster's control plane endpoint to apply resources to. | `string` | n/a | yes |
+| <a name="input_cluster_token"></a> [cluster\_token](#input\_cluster\_token) | The Kubernetes control plane API authorization token. | `string` | n/a | yes |
+| <a name="input_create"></a> [create](#input\_create) | Whether or not to create Kubernetes resources. | `bool` | `true` | no |
+| <a name="input_depends"></a> [depends](#input\_depends) | Terraform modules, on which this module depends. Analogous to 'depends\_on'. Terraform will make sure those get created first. | `list(any)` | `[]` | no |
+| <a name="input_releases"></a> [releases](#input\_releases) | A map of Helm releases to be created. | `any` | `{}` | no |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| <a name="output_releases"></a> [releases](#output\_releases) | A map of release names to their respective resource outputs. |
 <!-- END_TF_DOCS -->
 
 ### 🔃 Contributing
