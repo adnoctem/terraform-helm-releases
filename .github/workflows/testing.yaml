@@ -28,7 +28,7 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
         terraform_version: [1.11, 1.12, 1.13]
     env:
-      GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }} # https://github.com/terraform-linters/tflint/blob/master/docs/user-guide/plugins.md#avoiding-rate-limiting
+      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }} # https://github.com/terraform-linters/tflint/blob/master/docs/user-guide/plugins.md#avoiding-rate-limiting
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout

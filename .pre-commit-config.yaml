@@ -44,7 +44,7 @@ repos:
       # see reference option 4
       # ref: https://github.com/antonbabenko/pre-commit-terraform?tab=readme-ov-file#terraform_validate
       - id: terraform_validate
-        exclude: 'examples/(full)/[^/]+$'
+        exclude: "examples/(full)/[^/]+$"
         name: "Validate the Terraform configuration"
         files: .*\.tf$
         args:
