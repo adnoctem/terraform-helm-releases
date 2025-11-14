@@ -4,7 +4,7 @@ module "full_releases" {
   cluster_host                       = "https://example-cluster.example.com:6443"
   cluster_certificate_authority_data = "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS1DTlNCQVRFLS0tLQo=...."
   cluster_token                      = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.dummy-payload.dummy-signature..."
-  
+
   releases = {
     opentelemetry-operator = {
       chart            = "opentelemetry-operator"

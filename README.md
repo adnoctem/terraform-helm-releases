@@ -1,10 +1,10 @@
 <p align="center">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://avatars.githubusercontent.com/u/15859888?s=200&v=4">
-      <img src="https://avatars.githubusercontent.com/u/15859888?s=200&v=4" height="225">
+      <img src="https://avatars.githubusercontent.com/u/15859888?s=200&v=4" height="225" alt="Ad Noctem Collective Logo">
     </picture>
     <picture>
-      <img src="https://raw.githubusercontent.com/adnoctem/artwork/refs/heads/main/projects/terraform/icon/color/terraform-icon-color.png" height="225">
+      <img src="https://raw.githubusercontent.com/adnoctem/artwork/refs/heads/main/projects/terraform/icon/color/terraform-icon-color.png" height="225" alt="Terraform Logo">
     </picture>
     <h1 align="center">Helm - Releases</h1>
 </p>
